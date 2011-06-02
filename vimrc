@@ -4,6 +4,7 @@ set number
 set hidden
 set ignorecase
 set background=dark
+set ai
 let mapleader = ","
 noremap <Leader>d :NERDTreeToggle<CR>
 
