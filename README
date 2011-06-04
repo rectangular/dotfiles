@@ -1,4 +1,5 @@
 Just a simple dotfiles setup.
+- autocompletion for python, ruby and others (Ctrl-N)
 
 Contains:
 - vimrc
@@ -8,3 +9,4 @@ Depends on:
 
 Kind of depends on:
 - NERDTree
+- ropemode and ropevim (http://rope.sourceforge.net/ropevim.html)
