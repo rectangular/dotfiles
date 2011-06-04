@@ -5,3 +5,6 @@ Contains:
 
 Depends on:
 - nothing
+
+Kind of depends on:
+- NERDTree
