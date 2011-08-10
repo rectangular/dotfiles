@@ -18,6 +18,10 @@ set guioptions-=r " no scrollbar on the right
 set guioptions-=l " no scrollbar on the left
 set guioptions-=b " no scrollbar on the bottom
 
+set backspace=indent  " Allow backspacing over autoindent
+set backspace+=eol    " Allow backspacing over line breaks (join lines)
+set backspace+=start  " Allow backspacing over the start of insert
+
 "
 " 4 spaces, current indent style
 "
@@ -42,11 +46,19 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
+" ActionScript is similar enough to JavaScript
+augroup actionscript
+    au!
+    autocmd BufRead *.as set filetype=actionscript
+augroup END
+
+
 " ropevim stuff
-source ~/.vim/plugin/ropevim.vim
-let ropevim_vim_completion=1
+" source ~/.vim/plugin/ropevim.vim
+" let ropevim_vim_completion=1
 " add the name of modules you want to autoimport
-let g:ropevim_autoimport_modules = ["os", "shutil"]
+" let g:ropevim_autoimport_modules = ["os", shutil]
 
-
+set wildmenu
+set wildmode=list:longest,full
 
