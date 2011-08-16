@@ -31,6 +31,10 @@ set softtabstop=4
 set expandtab
 
 filetype plugin on
+
+"for python autocomplete
+let g:pydiction_location = '/Users/motionboy/.vim/vimfiles/complete-dict'
+
 set ofu=syntaxcomplete#Complete
 
 " ruby
@@ -62,3 +66,4 @@ augroup END
 set wildmenu
 set wildmode=list:longest,full
 
+:au FileChangedShell * echo "Warning: File changed on disk"
