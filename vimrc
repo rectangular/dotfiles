@@ -1,3 +1,4 @@
+set t_Co=256
 colors desert
 syntax on
 set number
@@ -17,6 +18,8 @@ set scrolloff=5
 set guioptions-=r " no scrollbar on the right
 set guioptions-=l " no scrollbar on the left
 set guioptions-=b " no scrollbar on the bottom
+set guioptions=   " absolutely no gui options
+set guioptions-=t " no toolbar
 
 set backspace=indent  " Allow backspacing over autoindent
 set backspace+=eol    " Allow backspacing over line breaks (join lines)
