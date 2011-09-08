@@ -50,6 +50,9 @@ set expandtab
 
 filetype plugin on
 
+" enable spell checking
+setlocal spell spelllang=en_us
+
 "for python autocomplete
 let g:pydiction_location = '/Users/geof/.vim/vimfiles/complete-dict'
 
