@@ -1,4 +1,3 @@
-set t_Co=256
 colors desert
 syntax on
 set number
@@ -9,6 +8,23 @@ set ai
 let mapleader = ","
 noremap <Leader>d :NERDTreeToggle<CR>
 
+
+
+" paraphrased from Zach Holman
+set autoindent      " automatic indent new lines
+set smartindent     " be smart about it
+set nowrap          " none of that balogna
+set expandtab       " expand tabs to spaces
+set nosmarttab      " fuck tabs
+
+set ruler           " show where we are
+set nolazyredraw    " turn off lazy redraw
+
+set showmatch       " brackets/braces that is
+set visualbell      " shut the fuck up
+
+
+
 set lines=75 columns=125
 
 " set at least 5 lines above/below cursor
@@ -18,8 +34,7 @@ set scrolloff=5
 set guioptions-=r " no scrollbar on the right
 set guioptions-=l " no scrollbar on the left
 set guioptions-=b " no scrollbar on the bottom
-set guioptions=   " absolutely no gui options
-set guioptions-=t " no toolbar
+set guioptions=   " definitely no scrollbars
 
 set backspace=indent  " Allow backspacing over autoindent
 set backspace+=eol    " Allow backspacing over line breaks (join lines)
@@ -36,7 +51,7 @@ set expandtab
 filetype plugin on
 
 "for python autocomplete
-let g:pydiction_location = '/Users/motionboy/.vim/vimfiles/complete-dict'
+let g:pydiction_location = '/Users/geof/.vim/vimfiles/complete-dict'
 
 set ofu=syntaxcomplete#Complete
 
