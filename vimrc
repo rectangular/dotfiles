@@ -24,6 +24,11 @@ set showmatch       " brackets/braces that is
 set visualbell      " shut the fuck up
 
 
+" deal with horizontal scrolling a bit
+" more gracefully
+set sidescroll=5
+set listchars+=precedes:<,extends:>
+
 
 set lines=75 columns=125
 
