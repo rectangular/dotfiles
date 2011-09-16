@@ -8,7 +8,7 @@ set ai
 let mapleader = ","
 noremap <Leader>d :NERDTreeToggle<CR>
 
-
+set guicursor+=n-v-c:blinkon0   " no more blinking!
 
 " paraphrased from Zach Holman
 set autoindent      " automatic indent new lines
