@@ -23,17 +23,24 @@ set nolazyredraw    " turn off lazy redraw
 set showmatch       " brackets/braces that is
 set visualbell      " shut the fuck up
 
+" get rid of the auto commenting crap from vim
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 
 " deal with horizontal scrolling a bit
 " more gracefully
 set sidescroll=5
 set listchars+=precedes:<,extends:>
 
-
 set lines=75 columns=125
 
-" set at least 5 lines above/below cursor
-set scrolloff=5
+set so=7 " Set 7 lines to the curors - when moving vertical..
+
+set history=700 " Sets how many lines of history VIM has to remember
+
+filetype plugin indent on " load filetype plugins/indent settings
+
+set scrolloff=5 " set at least 5 lines above/below cursor
 
 " get ride of scrollbar crap
 set guioptions-=r " no scrollbar on the right
@@ -92,4 +99,4 @@ augroup END
 set wildmenu
 set wildmode=list:longest,full
 
-:au FileChangedShell * echo "Warning: File changed on disk"
+au FileChangedShell * echo "Warning: File changed on disk"
