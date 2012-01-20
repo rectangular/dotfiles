@@ -1,15 +1,60 @@
+set nocompatible                        " choose no compatibility with legacy vi
+set number                              
+set hidden                              " allow switching buffers without saving
+set background=dark                     
+set undofile                            " persistent undo!
+set autoread                            " watch for file changes
+set encoding=utf-8
+set hlsearch                            " highlighting for search
+set incsearch                           " Show matches as pattern is being typed
+set ignorecase                          " ignore case in search
+set smartcase                           " Ignore case only when pattern is all lowercase
+set fileformats=unix,dos,mac            " Detect line endings correctly
+set t_Co=256                            " 256 color mode
+set wildignore+=*.o,*.obj,.git,*.pyc    " command-T ignore
+set guicursor+=n-v-c:blinkon0           " no more blinking!
+set nowrap                              " none of that balogna
+set expandtab                           " expand tabs to spaces
+set nosmarttab                          " fuck tabs
+set ruler                               " show where we are
+set lazyredraw                          " don't redraw when don't have to
+set showmatch                           " brackets/braces that is
+set visualbell                          " shut the fuck up
+set bg=dark                             " dark background
+set formatoptions-=c                    " seriously, no auto comments
+set sidescroll=10                       " deal with side scrolling more gracefully
+set sidescrolloff=10                    " keep at least 5 lines left/right
+set scrolloff=5                         " set at least 5 lines above/below cursor
+set listchars+=precedes:<,extends:>
+set lines=75 columns=125                " set dimensions of the vim window
+set history=700                         " Sets how many lines of history VIM has to remember
+set guioptions-=r                       " no scrollbar on the right
+set guioptions-=l                       " no scrollbar on the left
+set guioptions-=b                       " no scrollbar on the bottom
+set guioptions=                         " definitely no scrollbars
+set backspace=indent,eol,start          " backspace through everything in insert mode
+set tabstop=4                           " tabs, spaces and how to deal with them
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set sw=4 sts=4 et
+set wildmenu                            " wildmenu adjustments
+set wildmode=list:longest,full
+set ofu=syntaxcomplete#Complete
+
+" set ai
+" set autoindent                        " automatic indent new lines
+" set smartindent                       " be smart about it
+" set nolazyredraw                      " turn off lazy redraw
+
 colors desert
 syntax on
-set number
-set hidden
-set ignorecase
-set background=dark
-" set ai
-filetype plugin on
-filetype plugin indent on       " load file type plugins + indentation
-set undofile                    " persistent undo!
 
-set encoding=utf-8
+filetype plugin on
+filetype plugin indent on               " load file type plugins + indentation
+
+" clear the search
+nnoremap <esc> :noh<return><esc>    
 
 " do I dare disable the arrow keys?
 nnoremap <up> <nop>
@@ -32,8 +77,7 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-" focus when vim buffer is no longer in focus
-" au FocusLost * :wa
+" au FocusLost * :wa                    " save? when vim buffer is no longer in focus
 
 " reselect just pasted text to indent and etc with ,v
 nnoremap <leader>v V`]
@@ -41,71 +85,29 @@ nnoremap <leader>v V`]
 " sort css properties with ,s
 nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
+" NERDTree
 let mapleader = ","
 noremap <Leader>d :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '\~$']
 
-set nocompatible                " choose no compatibility with legacy vi
-
-set guicursor+=n-v-c:blinkon0   " no more blinking!
+" Command-T
+let g:CommandTMaxHeight = 15            " maximum height of 15
 
 " quick switching between files
 nnoremap <leader><leader> <c-^> 
 
-" paraphrased from Zach Holman
-" set autoindent      " automatic indent new lines
-" set smartindent     " be smart about it
-set nowrap          " none of that balogna
-set expandtab       " expand tabs to spaces
-set nosmarttab      " fuck tabs
-set ruler           " show where we are
-set nolazyredraw    " turn off lazy redraw
-set showmatch       " brackets/braces that is
-set visualbell      " shut the fuck up
-
 " get rid of the auto commenting crap from vim
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-set formatoptions-=c  " seriously, no auto comments
-
-" deal with horizontal scrolling a bit
-" more gracefully
-set sidescroll=5
-set listchars+=precedes:<,extends:>
-
-set lines=75 columns=125
-
-set history=700 " Sets how many lines of history VIM has to remember
-
-set scrolloff=5 " set at least 5 lines above/below cursor
-
-" get rid of scrollbar crap
-set guioptions-=r " no scrollbar on the right
-set guioptions-=l " no scrollbar on the left
-set guioptions-=b " no scrollbar on the bottom
-set guioptions=   " definitely no scrollbars
-
-set backspace=indent,eol,start  " backspace through everything in insert mode
-
-"
-" 4 spaces, current indent style
-"
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
 
 " enable spell checking
 setlocal spell spelllang=en_us
-
-"for python autocomplete
-"let g:pydiction_location = '/Users/geof/.vim/vimfiles/complete-dict'
-
-set ofu=syntaxcomplete#Complete
 
 " ruby
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
 " improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 
@@ -113,6 +115,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 " let's assume these are django files
 au BufNewFile,BufRead admin.py     setlocal filetype=python.django
@@ -128,8 +131,9 @@ augroup actionscript
     autocmd BufRead *.as set filetype=actionscript
 augroup END
 
-set wildmenu
-set wildmode=list:longest,full
 
 " warn if something changes
 au FileChangedShell * echo "Warning: File changed on disk"
+
+" tumblr theme support!
+au! BufRead,BufNewFile *.tumblr.html setfiletype tumblr
