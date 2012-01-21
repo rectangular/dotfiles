@@ -11,7 +11,9 @@ set ignorecase                          " ignore case in search
 set smartcase                           " Ignore case only when pattern is all lowercase
 set fileformats=unix,dos,mac            " Detect line endings correctly
 set t_Co=256                            " 256 color mode
-set wildignore+=*.o,*.obj,.git,*.pyc    " command-T ignore
+set wildignore+=.hg,.git,.svn           " Version control ignore
+set wildignore+=*.o,*.obj,*.pyc         " command-T ignore
+set wildignore+=*.DS_Store              " OSX bullshit
 set guicursor+=n-v-c:blinkon0           " no more blinking!
 set nowrap                              " none of that balogna
 set expandtab                           " expand tabs to spaces
