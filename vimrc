@@ -56,7 +56,7 @@ filetype plugin on
 filetype plugin indent on               " load file type plugins + indentation
 
 " clear the search
-nnoremap <esc> :noh<return><esc>    
+nnoremap <f2> :noh<return><esc>    
 
 " do I dare disable the arrow keys?
 nnoremap <up> <nop>
