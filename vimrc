@@ -1,3 +1,5 @@
+call pathogen#infect()                  " pathogen
+
 set nocompatible                        " choose no compatibility with legacy vi
 set number                              
 set hidden                              " allow switching buffers without saving
@@ -28,8 +30,7 @@ set sidescroll=10                       " deal with side scrolling more graceful
 set sidescrolloff=10                    " keep at least 5 lines left/right
 set scrolloff=5                         " set at least 5 lines above/below cursor
 set listchars+=precedes:<,extends:>
-set lines=75 columns=125                " set dimensions of the vim window
-set history=700                         " Sets how many lines of history VIM has to remember
+set history=1000                         " Sets how many lines of history VIM has to remember
 set guioptions-=r                       " no scrollbar on the right
 set guioptions-=l                       " no scrollbar on the left
 set guioptions-=b                       " no scrollbar on the bottom
@@ -43,6 +44,9 @@ set sw=4 sts=4 et
 set wildmenu                            " wildmenu adjustments
 set wildmode=list:longest,full
 set ofu=syntaxcomplete#Complete
+set hidden                              " buffers can exist in the background w/o a window
+set title
+set shortmess=at                        " everyone loves short stuff
 
 " set ai
 " set autoindent                        " automatic indent new lines
@@ -51,9 +55,9 @@ set ofu=syntaxcomplete#Complete
 
 colors desert
 syntax on
-
+filetype on
 filetype plugin on
-filetype plugin indent on               " load file type plugins + indentation
+filetype indent on               " load file type plugins + indentation
 
 " clear the search
 nnoremap <f2> :noh<return><esc>    
@@ -78,8 +82,6 @@ nnoremap k gk
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-
-" au FocusLost * :wa                    " save? when vim buffer is no longer in focus
 
 " reselect just pasted text to indent and etc with ,v
 nnoremap <leader>v V`]
@@ -133,9 +135,16 @@ augroup actionscript
     autocmd BufRead *.as set filetype=actionscript
 augroup END
 
-
 " warn if something changes
 au FileChangedShell * echo "Warning: File changed on disk"
 
 " tumblr theme support!
 au! BufRead,BufNewFile *.tumblr.html setfiletype tumblr
+
+if has("gui_running")
+    set gfn=Menlo:h11                       " Yummm it's Menlo
+    set lines=75 columns=125                " set dimensions of the vim window
+endif
+
+" autosave
+":au FocusLost * silent! wa
