@@ -60,7 +60,15 @@ filetype plugin on
 filetype indent on               " load file type plugins + indentation
 
 " clear the search
-nnoremap <f2> :noh<return><esc>    
+noremap <silent><f2> :nohls<CR>
+
+" easy and quick to exit insert mode
+imap jj <Esc>
+imap jk <Esc>
+imap kj <Esc>
+
+" hitting esc won't wiggle to the left
+inoremap <Esc> <Esc>`^
 
 " do I dare disable the arrow keys?
 nnoremap <up> <nop>
@@ -148,3 +156,4 @@ endif
 
 " autosave
 ":au FocusLost * silent! wa
+hi VertSplit    guifg=#999999 guibg=#333333 
