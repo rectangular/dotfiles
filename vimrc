@@ -1,6 +1,26 @@
-call pathogen#infect()                  " pathogen
-
 set nocompatible                        " choose no compatibility with legacy vi
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'hdima/python-syntax'
+
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'rainux/vim-desert-warm-256'
+
+call vundle#end()                       " required for vundle
+filetype plugin indent on               " required for vundle
+
+let g:solarized_termcolors = 256 
+
 set number                              
 set hidden                              " allow switching buffers without saving
 set background=dark                     
@@ -53,7 +73,7 @@ set shortmess=at                        " everyone loves short stuff
 " set smartindent                       " be smart about it
 " set nolazyredraw                      " turn off lazy redraw
 
-colors desert
+colors desert-warm-256
 syntax on
 filetype on
 filetype plugin on
@@ -65,7 +85,6 @@ noremap <silent><f2> :nohls<CR>
 " easy and quick to exit insert mode
 imap jj <Esc>
 imap jk <Esc>
-imap kj <Esc>
 
 " hitting esc won't wiggle to the left
 inoremap <Esc> <Esc>`^
