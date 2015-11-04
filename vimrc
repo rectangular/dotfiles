@@ -9,6 +9,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 
+Plugin 'wincent/Command-T'
+
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'hdima/python-syntax'
@@ -147,6 +149,9 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+
+" better git commit messages
+autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " let's assume these are django files
 au BufNewFile,BufRead admin.py     setlocal filetype=python.django
