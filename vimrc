@@ -20,6 +20,8 @@ Plugin 'rainux/vim-desert-warm-256'
 
 Plugin 'amiorin/vim-project'
 
+Plugin 'Valloric/YouCompleteMe'
+
 call vundle#end()                       " required for vundle
 filetype plugin indent on               " required for vundle
 
