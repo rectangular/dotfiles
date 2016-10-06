@@ -18,8 +18,19 @@ Plugin 'hdima/python-syntax'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'rainux/vim-desert-warm-256'
 
+Plugin 'amiorin/vim-project'
+
 call vundle#end()                       " required for vundle
 filetype plugin indent on               " required for vundle
+
+let g:project_use_nerdtree = 1
+set rtp+=~/.vim/bundle/vim-project/
+call project#rc("~/Dropbox")
+
+Project '_work/Rally/Social Meter/Code/youmap-marketing/'
+Project 'Projects/Air_Lookout/Site/air_report/'
+Project 'Projects/Air_Lookout/Marketing Site/'
+Project 'Projects/Text Wash/Site/'
 
 let g:solarized_termcolors = 256 
 
