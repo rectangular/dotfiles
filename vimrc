@@ -21,6 +21,7 @@ Plugin 'rainux/vim-desert-warm-256'
 Plugin 'amiorin/vim-project'
 
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'lumiliet/vim-twig'
 
 call vundle#end()                       " required for vundle
 filetype plugin indent on               " required for vundle
@@ -29,12 +30,21 @@ let g:project_use_nerdtree = 1
 set rtp+=~/.vim/bundle/vim-project/
 call project#rc("~/Dropbox")
 
-Project '_work/Rally/Social Meter/Code/youmap-marketing/'
-Project 'Projects/Air_Lookout/Site/air_report/'
-Project 'Projects/Air_Lookout/Marketing Site/'
-Project 'Projects/Text Wash/Site/'
+File '~/.vimrc', 'vimrc'
+
+" My Projects
+Project '~/Dropbox/_build_projects/blog_v3/blog/', 'Blog'
+Project '~/Dropbox/Work/_Portfolio/Site/Code/', 'Portfolio Site'
+Project 'Projects/Air_Lookout/Site/air_report/', 'Air Lookout Site'
+Project 'Projects/Air_Lookout/Marketing Site/', 'Air Lookout Marketing Site'
+Project 'Projects/Text Wash/Site/', 'Text Wash Site'
+
+" Client work
+Project '~/Dropbox/Work/', 'Freelance Work Directory'
 
 let g:solarized_termcolors = 256 
+
+let g:CommandTMaxFiles=200000           " thanks npm
 
 set number                              
 set hidden                              " allow switching buffers without saving
@@ -96,10 +106,6 @@ filetype indent on               " load file type plugins + indentation
 
 " clear the search
 noremap <silent><f2> :nohls<CR>
-
-" easy and quick to exit insert mode
-imap jj <Esc>
-imap jk <Esc>
 
 " hitting esc won't wiggle to the left
 inoremap <Esc> <Esc>`^
