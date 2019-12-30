@@ -15,6 +15,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'hdima/python-syntax'
 
+Plugin 'toyamarinyon/vim-swift'
+
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'rainux/vim-desert-warm-256'
 
@@ -30,14 +32,19 @@ let g:project_use_nerdtree = 1
 set rtp+=~/.vim/bundle/vim-project/
 call project#rc("~/Dropbox")
 
+" Swift specific
+let g:syntastic_swift_checkers = ['swiftlint']
+
+" Markdown specific
+let g:vim_markdown_folding_disabled = 1
+
 File '~/.vimrc', 'vimrc'
 
 " My Projects
-Project '~/Dropbox/_build_projects/blog_v3/blog/', 'Blog'
-Project '~/Dropbox/Work/_Portfolio/Site/Code/', 'Portfolio Site'
-Project 'Projects/Air_Lookout/Site/air_report/', 'Air Lookout Site'
-Project 'Projects/Air_Lookout/Marketing Site/', 'Air Lookout Marketing Site'
-Project 'Projects/Text Wash/Site/', 'Text Wash Site'
+Project '~/Dropbox/Projects/Blog/blog_v3/blog/', 'Blog'
+Project '~/Dropbox/Projects/Air_Lookout/Site/air_report/', 'Air Lookout Site'
+Project '~/Dropbox/Projects/SimplePacer/Site/', 'Simple Pacer Marketing Site'
+Project '~/Dropbox/Projects/Text Wash/Site/', 'Text Wash Site'
 
 " Client work
 Project '~/Dropbox/Work/', 'Freelance Work Directory'
@@ -49,7 +56,8 @@ let g:CommandTMaxFiles=200000           " thanks npm
 set number                              
 set hidden                              " allow switching buffers without saving
 set background=dark                     
-set undofile                            " persistent undo!
+"set undofile                            " persistent undo!
+set noundofile                          " no undofile
 set autoread                            " watch for file changes
 set encoding=utf-8
 set hlsearch                            " highlighting for search
@@ -200,3 +208,8 @@ endif
 " autosave
 ":au FocusLost * silent! wa
 hi VertSplit    guifg=#999999 guibg=#333333 
+
+" clean up swap and temp files
+set backupdir=.backup/,~/.backup/,/tmp//
+set directory=.swp/,~/.swp/,/tmp//
+set undodir=.undo/,~/.undo/,/tmp//
