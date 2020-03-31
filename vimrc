@@ -25,6 +25,8 @@ Plugin 'amiorin/vim-project'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'lumiliet/vim-twig'
 
+Plugin 'tpope/vim-characterize'
+
 call vundle#end()                       " required for vundle
 filetype plugin indent on               " required for vundle
 
