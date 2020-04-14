@@ -35,6 +35,7 @@ done
 echo "Installing submodules"
 
 git submodule init
+git submodule update
 
 echo "Installing vim plugins"
 
