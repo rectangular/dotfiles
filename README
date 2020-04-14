@@ -23,4 +23,4 @@ Uses plugins:
 'tpope/vim-characterize'
 
 Installation:
-`sh install.sh`
+`bash ./install.sh`
