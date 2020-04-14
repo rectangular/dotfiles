@@ -1,4 +1,3 @@
-bundle/
 *.un~
 *.swp
-/.netrwhist
+.netrwhist
