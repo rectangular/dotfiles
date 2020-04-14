@@ -4,11 +4,11 @@ echo "Installing dotfiles..."
 
 # Find correct directory
 if [ -d ~/.dotfiles ]; then
-	d=~/.dotfiles
-	echo "Found .dotfiles"
+    d=~/.dotfiles
+    echo "Found .dotfiles"
 elif [ -d ~/Dropbox/code/dotfiles ]; then
-	d=~/Dropbox/code/dotfiles
-	echo "Found Dropbox dotfiles"
+    d=~/Dropbox/code/dotfiles
+    echo "Found Dropbox dotfiles"
 fi
 
 # Move to correct directory
@@ -16,7 +16,7 @@ cd $d
 
 # Create symlinks
 for f in .???*; do
-	rm -f ~/$f
+    rm -f ~/$f
 
     # Ignore .git
     if [ "$f" == ".git" ]; then
@@ -28,7 +28,7 @@ for f in .???*; do
         continue
     fi
 
-	(cd ~/; ln -s $d/$f $f)
+    (cd ~/; ln -s $d/$f $f)
     echo "Creating symlink $d/$f -> ~/$f"
 done
 
