@@ -24,7 +24,7 @@ for f in .???*; do
     fi
 
     # Ignore .gitignore file
-    if [ $f == ".gitignore" ]; then
+    if [ "$f" == ".gitignore" ]; then
         continue
     fi
 
