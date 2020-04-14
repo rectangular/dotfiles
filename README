@@ -1,12 +1,22 @@
-Just a simple dotfiles setup.
-- autocompletion for python, ruby and others (Ctrl-N)
+Dotfiles for macOS and Linux (including Xorg).
 
 Contains:
 - vimrc
+- .vim directory
 
-Depends on:
-- nothing
-
-Kind of depends on:
-- NERDTree
-- ropemode and ropevim (http://rope.sourceforge.net/ropevim.html)
+Uses plugins:
+'VundleVim/Vundle.vim'
+'tpope/vim-fugitive'
+'scrooloose/nerdtree'
+'scrooloose/nerdcommenter'
+'wincent/Command-T'
+'godlygeek/tabular'
+'plasticboy/vim-markdown'
+'hdima/python-syntax'
+'toyamarinyon/vim-swift'
+'altercation/vim-colors-solarized'
+'rainux/vim-desert-warm-256'
+'amiorin/vim-project'
+'Valloric/YouCompleteMe'
+'lumiliet/vim-twig'
+'tpope/vim-characterize'
