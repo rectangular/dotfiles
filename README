@@ -1,8 +1,9 @@
 Dotfiles for macOS and Linux (including Xorg).
 
 Contains:
-- vimrc
+- .vimrc
 - .vim directory
+- .bash_profile
 
 Uses plugins:
 'VundleVim/Vundle.vim'
@@ -20,3 +21,6 @@ Uses plugins:
 'Valloric/YouCompleteMe'
 'lumiliet/vim-twig'
 'tpope/vim-characterize'
+
+Installation:
+`sh install.sh`
