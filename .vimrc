@@ -27,6 +27,8 @@ Plugin 'lumiliet/vim-twig'
 
 Plugin 'tpope/vim-characterize'
 
+Plugin 'arrufat/vala.vim'
+
 call vundle#end()                       " required for vundle
 filetype plugin indent on               " required for vundle
 
