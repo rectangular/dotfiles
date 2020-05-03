@@ -4,6 +4,8 @@ Contains:
 - .vimrc
 - .vim directory
 - .bash_profile
+- Xcode color theme based on Desert 256 using SF Mono
+- macOS Terminal Desert color profile
 
 Uses plugins:
 'VundleVim/Vundle.vim'
@@ -24,3 +26,8 @@ Uses plugins:
 
 Installation:
 `bash ./install.sh`
+
+Mac Specific Installation:
+- Install Xcode color profile to `~/Library/Developer/Xcode/UserData/FontAndColorThemes/`
+- Import macOS terminal color in Terminal: Settings → Profiles → [ Cog Icon ] → Import
+
