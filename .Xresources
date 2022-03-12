@@ -39,7 +39,7 @@ XTerm*color15        : #ffffff
 XTerm*borderWidth            : 0
 XTerm*internalBorder         : 2
 ! set TERM env variable to use 256 colors
-XTerm*termName               : xterm-256color
+!xtERM*TERMnAME               : XTERM-256COLOR
 ! make alt key work normally
 XTerm*vt100.metaSendsEscape  : true
 ! save ~10,000 lines of scrollback
@@ -64,5 +64,3 @@ XTerm*charClass              : 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:
 XTerm*on2Clicks              : word
 ! select whole line on three clicks
 XTerm*on3Clicks              : line
-! shift + left click to open selection in web browser
-XTerm*VT100*Translations     : #override Shift : exec-formatted("chrome --enable-unveil '%t'", PRIMARY)
