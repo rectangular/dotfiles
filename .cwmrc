@@ -1,0 +1,12 @@
+sticky yes
+
+snapdist 4
+
+gap 0 14 0 0
+
+command xterm
+command chrome "chrome --enable-unveil"
+command firefox
+command xcalc
+
+ignore xclock
